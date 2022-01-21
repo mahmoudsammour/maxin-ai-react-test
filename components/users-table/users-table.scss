@@ -1,0 +1,95 @@
+// $backgroundColor: #F5F5F5;
+
+// .wapper {
+//   text-align: center;
+//   .users-table {
+//     background-color: $backgroundColor;
+//     margin: 0 auto;
+//     &__header{
+//       background-color: red;
+//     }
+//     &__body{
+//       background-color: yellow;
+//     }
+//   }
+// }
+.wrapper {
+	text-align: center;
+	margin: 20px auto;
+}
+.users-table {
+	width: 750px;
+	border-collapse: collapse;
+	margin: auto;
+}
+
+/* Zebra striping */
+
+.users-table__th {
+	background: #3498db;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+	border: 1px solid #ccc;
+	text-align: left;
+	font-size: 18px;
+}
+
+.users-table__td {
+	padding: 10px;
+	border: 1px solid #ccc;
+	text-align: left;
+	font-size: 18px;
+}
+.users-table__button {
+	background: transparent;
+	border: none;
+	font-size: larger;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+	.users-table {
+		width: 100%;
+		display: block;
+	}
+
+	table,
+	.users-table__header,
+	.users-table__body,
+	.users-table__th,
+	.users-table__td,
+	.users-table__tr {
+		display: block;
+	}
+
+	.users-table__header {
+		.users-table__th {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+	}
+
+	.users-table__tr {
+		border: 1px solid #ccc;
+	}
+
+	.users-table__td {
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	.users-table__td:before {
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+		content: attr(data-column);
+		color: #000;
+		font-weight: bold;
+	}
+}
